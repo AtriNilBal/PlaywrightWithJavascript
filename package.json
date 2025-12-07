@@ -17,6 +17,10 @@
   "homepage": "https://github.com/AtriNilBal/PlaywrightWithJavascript#readme",
   "devDependencies": {
     "@playwright/test": "^1.57.0",
-    "@types/node": "^24.10.1"
+    "@types/node": "^24.10.1",
+    "@cucumber/cucumber": "^12.3.0"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.3.0"
   }
 }

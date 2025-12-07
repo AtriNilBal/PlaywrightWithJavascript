@@ -9,3 +9,9 @@ Executions:
 2. run filtered tests by tags = npx playwright test --grep "@<tagname>"
 3. add test.only instead of test in spec file to run only the test case via = npx playwright test
 4. to generate playwright report run = npx playwright show-report
+
+Installations:
+3. Install cucumber-js: npm install @cucumber/cucumber
+
+Executions:
+5. to run tagged cucumber feature = npx cucumber-js --tags "@<tagname>" --exit
