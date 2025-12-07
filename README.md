@@ -30,3 +30,8 @@ Executions:
 
 Installation:
 6. Install multiple-cucumber-html-reporter package for reporting = npm i multiple-cucumber-html-reporter
+
+Execution:
+8. to run mobile features parallely = npm run test:mobile-parallel
+9. to run desktop features parallely = npm run test:desktop-parallel
+10. html report will be generated in reports/html-report/index.html

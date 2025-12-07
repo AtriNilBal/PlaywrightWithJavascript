@@ -7,8 +7,12 @@
     "test:chromium": "cross-env BROWSER=chromium npx cucumber-js --format json:reports/chromium-report.json --exit",
     "test:firefox": "cross-env BROWSER=firefox npx cucumber-js --format json:reports/firefox-report.json --exit",
     "test:webkit": "cross-env BROWSER=webkit npx cucumber-js --format json:reports/webkit-report.json --exit",
-    "test:sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit & node process-and-generate-html-report.js",
-    "test:parallel": "run-p test:chromium test:firefox test:webkit & node process-and-generate-html-report.js"
+    "test:chromium-mobile": "cross-env BROWSER=chromium-mobile npx cucumber-js --format json:reports/chromium-report.json --exit",
+    "test:webkit-mobile": "cross-env BROWSER=webkit-mobile npx cucumber-js --format json:reports/webkit-report.json --exit",
+    "test:desktop-sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit & node process-and-generate-html-report.js",
+    "test:desktop-parallel": "run-p test:chromium test:firefox test:webkit & node process-and-generate-html-report.js",
+    "test:mobile-sequential": "npm run test:chromium-mobile & npm run test:webkit-mobile & node process-and-generate-html-report.js",
+    "test:mobile-parallel": "run-p test:chromium-mobile test:webkit-mobile & node process-and-generate-html-report.js"
   },
   "repository": {
     "type": "git",
