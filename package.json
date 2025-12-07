@@ -21,6 +21,7 @@
     "@cucumber/cucumber": "^12.3.0"
   },
   "dependencies": {
+    "@playwright/test": "^1.57.0",
     "@cucumber/cucumber": "^12.3.0"
   }
 }
