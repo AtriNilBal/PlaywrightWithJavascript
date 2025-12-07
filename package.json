@@ -1,0 +1,22 @@
+{
+  "name": "playwrightwithjavascript",
+  "version": "1.0.0",
+  "description": "Playwright with Javascript project",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtriNilBal/PlaywrightWithJavascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AtriNilBal/PlaywrightWithJavascript/issues"
+  },
+  "homepage": "https://github.com/AtriNilBal/PlaywrightWithJavascript#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}
