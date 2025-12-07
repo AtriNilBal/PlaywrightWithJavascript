@@ -21,3 +21,9 @@ Installation:
 
 Executions:
 6. to run tests sequentially = npm run test:sequential
+
+Installation:
+5. Install run-p package for parallel execution= npm install npm-run-all --save-dev
+
+Executions:
+7. to run tests parallely = npm run test:parallel

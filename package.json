@@ -7,7 +7,8 @@
     "test:chromium": "cross-env BROWSER=chromium npx cucumber-js --exit",
     "test:firefox": "cross-env BROWSER=firefox npx cucumber-js --exit",
     "test:webkit": "cross-env BROWSER=webkit npx cucumber-js --exit",
-    "test:sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit"
+    "test:sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit",
+    "test:parallel": "run-p test:chromium test:firefox test:webkit"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
     "@cucumber/cucumber": "^12.3.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1",
-    "cross-env": "^10.1.0"
+    "cross-env": "^10.1.0",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.3.0",
