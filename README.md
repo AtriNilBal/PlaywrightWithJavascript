@@ -15,3 +15,9 @@ Installations:
 
 Executions:
 5. to run tagged cucumber feature = npx cucumber-js --tags "@<tagname>" --exit
+
+Installation:
+4. Install cross-env for providing runtime arguments to node scripts: npm install --save-dev cross-env
+
+Executions:
+6. to run tests sequentially = npm run test:sequential

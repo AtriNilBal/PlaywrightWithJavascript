@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Playwright with Javascript project",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:chromium": "cross-env BROWSER=chromium npx cucumber-js --exit",
+    "test:firefox": "cross-env BROWSER=firefox npx cucumber-js --exit",
+    "test:webkit": "cross-env BROWSER=webkit npx cucumber-js --exit",
+    "test:sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AtriNilBal/PlaywrightWithJavascript.git"
@@ -16,12 +21,13 @@
   },
   "homepage": "https://github.com/AtriNilBal/PlaywrightWithJavascript#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^12.3.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1",
-    "@cucumber/cucumber": "^12.3.0"
+    "cross-env": "^10.1.0"
   },
   "dependencies": {
-    "@playwright/test": "^1.57.0",
-    "@cucumber/cucumber": "^12.3.0"
+    "@cucumber/cucumber": "^12.3.0",
+    "@playwright/test": "^1.57.0"
   }
 }
