@@ -1,0 +1,60 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "validations-for-sauce-demo-webapp;login-validations",
+        "keyword": "Scenario Outline",
+        "line": 9,
+        "name": "Login Validations",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 286001500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I launch the application",
+            "match": {
+              "location": "features\\stepDefinitions\\sauce.js:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1274539999
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Sauce",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "validations-for-sauce-demo-webapp",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Validations for sauce demo webapp",
+    "tags": [],
+    "uri": "features\\sauce.feature",
+    "metadata": {
+      "browser": {
+        "name": "chrome"
+      },
+      "device": "Local Test Machine",
+      "platform": {
+        "name": "win32",
+        "version": "10.0.19045"
+      }
+    }
+  }
+]

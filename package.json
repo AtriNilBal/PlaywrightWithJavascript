@@ -4,11 +4,11 @@
   "description": "Playwright with Javascript project",
   "main": "index.js",
   "scripts": {
-    "test:chromium": "cross-env BROWSER=chromium npx cucumber-js --exit",
-    "test:firefox": "cross-env BROWSER=firefox npx cucumber-js --exit",
-    "test:webkit": "cross-env BROWSER=webkit npx cucumber-js --exit",
-    "test:sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit",
-    "test:parallel": "run-p test:chromium test:firefox test:webkit"
+    "test:chromium": "cross-env BROWSER=chromium npx cucumber-js --format json:reports/chromium-report.json --exit",
+    "test:firefox": "cross-env BROWSER=firefox npx cucumber-js --format json:reports/firefox-report.json --exit",
+    "test:webkit": "cross-env BROWSER=webkit npx cucumber-js --format json:reports/webkit-report.json --exit",
+    "test:sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit & node process-and-generate-html-report.js",
+    "test:parallel": "run-p test:chromium test:firefox test:webkit & node process-and-generate-html-report.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.3.0",
-    "@playwright/test": "^1.57.0"
+    "@playwright/test": "^1.57.0",
+    "multiple-cucumber-html-reporter": "^3.9.3"
   }
 }

@@ -27,3 +27,6 @@ Installation:
 
 Executions:
 7. to run tests parallely = npm run test:parallel
+
+Installation:
+6. Install multiple-cucumber-html-reporter package for reporting = npm i multiple-cucumber-html-reporter
