@@ -24,9 +24,15 @@ function enrichJsonWithBrowser(filePath, browserName) {
     fs.writeFileSync(filePath, JSON.stringify(features, null, 2), 'utf-8');
 }
 
-enrichJsonWithBrowser(path.join(reportsDir, 'chromium-report.json'), 'chrome');
-enrichJsonWithBrowser(path.join(reportsDir, 'firefox-report.json'), 'firefox');
-enrichJsonWithBrowser(path.join(reportsDir, 'webkit-report.json'), 'safari');
+if(fs.existsSync(path.join(reportsDir, 'chromium-report.json'))) {
+    enrichJsonWithBrowser(path.join(reportsDir, 'chromium-report.json'), 'chrome');
+}
+if(fs.existsSync(path.join(reportsDir, 'firefox-report.json'))) {
+    enrichJsonWithBrowser(path.join(reportsDir, 'firefox-report.json'), 'firefox');
+}
+if(fs.existsSync(path.join(reportsDir, 'webkit-report.json'))) {
+    enrichJsonWithBrowser(path.join(reportsDir, 'webkit-report.json'), 'safari');
+}
 
 reporter.generate({
     jsonDir: reportsDir,

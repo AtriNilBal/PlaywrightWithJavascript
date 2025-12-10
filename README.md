@@ -35,3 +35,8 @@ Execution:
 8. to run mobile features parallely = npm run test:mobile-parallel
 9. to run desktop features parallely = npm run test:desktop-parallel
 10. html report will be generated in reports/html-report/index.html
+
+Installation:
+7. Install dayjs for date formatting in reports=npm install dayjs --save
+8. Install cucumber-html-reporter=npm install cucumber-html-reporter --save-dev
+9. Install rimraf for files deletion = npm install rimraf

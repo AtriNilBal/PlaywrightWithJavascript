@@ -4,15 +4,16 @@
   "description": "Playwright with Javascript project",
   "main": "index.js",
   "scripts": {
+    "clean:reports":"rimraf --glob reports/*.json timeout /t 3 /nobreak",
     "test:chromium": "cross-env BROWSER=chromium npx cucumber-js --format json:reports/chromium-report.json --exit",
     "test:firefox": "cross-env BROWSER=firefox npx cucumber-js --format json:reports/firefox-report.json --exit",
     "test:webkit": "cross-env BROWSER=webkit npx cucumber-js --format json:reports/webkit-report.json --exit",
     "test:chromium-mobile": "cross-env BROWSER=chromium-mobile npx cucumber-js --format json:reports/chromium-report.json --exit",
     "test:webkit-mobile": "cross-env BROWSER=webkit-mobile npx cucumber-js --format json:reports/webkit-report.json --exit",
-    "test:desktop-sequential": "npm run test:chromium & npm run test:firefox & npm run test:webkit & node process-and-generate-html-report.js",
-    "test:desktop-parallel": "run-p test:chromium test:firefox test:webkit & node process-and-generate-html-report.js",
-    "test:mobile-sequential": "npm run test:chromium-mobile & npm run test:webkit-mobile & node process-and-generate-html-report.js",
-    "test:mobile-parallel": "run-p test:chromium-mobile test:webkit-mobile & node process-and-generate-html-report.js"
+    "test:desktop-sequential": "npm run clean:reports & npm run test:chromium & npm run test:firefox & npm run test:webkit",
+    "test:desktop-parallel": "npm run clean:reports & run-p test:chromium test:firefox test:webkit",
+    "test:mobile-sequential": "npm run clean:reports & npm run test:chromium-mobile & npm run test:webkit-mobile",
+    "test:mobile-parallel": "npm run clean:reports & run-p test:chromium-mobile test:webkit-mobile"
   },
   "repository": {
     "type": "git",
@@ -30,11 +31,14 @@
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1",
     "cross-env": "^10.1.0",
+    "cucumber-html-reporter": "^7.2.0",
     "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.3.0",
     "@playwright/test": "^1.57.0",
-    "multiple-cucumber-html-reporter": "^3.9.3"
+    "dayjs": "^1.11.19",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "rimraf": "^6.1.2"
   }
 }
