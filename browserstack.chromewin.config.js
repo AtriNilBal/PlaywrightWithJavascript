@@ -1,6 +1,6 @@
 const playwrightVersion = require('playwright/package.json').version;
 
-const capsChromeOsX = {
+const capsChromeWin = {
     browser: 'chrome',
     os: 'windows',
     os_version: '11',
@@ -8,8 +8,8 @@ const capsChromeOsX = {
     'browserstack.accessKey': 'EYEsGefYFcrgY9GtiNjf',
     'client.playwrightVersion': playwrightVersion,
     projectName: 'playwrightwithjavascript',
-    buildName: 'Chrome-On-OsX',
+    buildName: 'Chrome-On-Win',
     "browserstack.local": false
 };
 
-module.exports = {capsChromeOsX};
+module.exports = {capsChromeWin};

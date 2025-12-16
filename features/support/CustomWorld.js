@@ -3,7 +3,7 @@ console.log('Loading Custom World file');
 const{ setWorldConstructor, World} = require('@cucumber/cucumber');
 const{ chromium, firefox, webkit, devices} = require('playwright');
 const { capsChromeOsX } = require('../../browserstack.chromeosx.config');
-const { capsChromeOsX } = require('../../browserstack.chromewin.config');
+const { capsChromeWin } = require('../../browserstack.chromewin.config');
 
 
 class CustomWorld extends World {
@@ -24,7 +24,9 @@ class CustomWorld extends World {
             let wsEndpoint;
             switch(browserName) {
                 case 'chromium-osx-bs': wsEndpoint = `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(capsChromeOsX))}`;
-                case 'chormium-win-bs': wsEndpoint = `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(capsChromeOsX))}`;
+                break;
+                case 'chromium-win-bs': wsEndpoint = `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(capsChromeWin))}`;
+                break;
                 default: throw new Error(`Unknown BS browser: ${browserName}`);
             }
             this.browser = await chromium.connect({wsEndpoint});
@@ -48,11 +50,21 @@ class CustomWorld extends World {
             //desktop launch
             this.browser= await browserType.launch({
                 headless: false,
-                args: ["--start-maximized"]
+                viewport: null
             });
             this.context = await this.browser.newContext({});
         }
         this.page = await this.context.newPage();
+        const monitorDimentions = await this.page.evaluate(()=>{
+            return {
+                width: screen.availWidth,
+                height: screen.availHeight
+            };
+        });
+        this.page.setViewportSize({
+            width: monitorDimentions.width,
+            height: monitorDimentions.height
+        });
         console.log('Local session started');
     }
 

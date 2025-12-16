@@ -40,3 +40,7 @@ Installation:
 7. Install dayjs for date formatting in reports=npm install dayjs --save
 8. Install cucumber-html-reporter=npm install cucumber-html-reporter --save-dev
 9. Install rimraf for files deletion = npm install rimraf
+10. Install browserstack-node-sdk=npm i --save-dev browserstack-node-sdk
+
+Executions:
+11. npx setup --username atrinilbal_moCzgQ --key EYEsGefYFcrgY9GtiNjf

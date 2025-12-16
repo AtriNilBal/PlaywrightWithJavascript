@@ -1,4 +1,9 @@
 /reports/html-report/
+log/
+Screenshots/
+reports
+reports/screenshots/
+*.log
 
 # Playwright
 node_modules/
